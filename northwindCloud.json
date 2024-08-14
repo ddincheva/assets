@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/alphabetical_list_of_products": {
+    "/api/alphabetical_products": {
       "get": {
         "tags": [
           "NorthwindCloudApp"
@@ -27,7 +27,7 @@
         }
       }
     },
-    "/api/category_most_popular_product/{categoryName}": {
+    "/api/most_popular_product_by_category/{categoryName}": {
       "get": {
         "tags": [
           "NorthwindCloudApp"
@@ -59,7 +59,7 @@
         }
       }
     },
-    "/api/category_most_popular_product": {
+    "/api/most_popular_product": {
       "get": {
         "tags": [
           "NorthwindCloudApp"
