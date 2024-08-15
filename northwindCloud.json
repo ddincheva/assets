@@ -22,7 +22,7 @@
                   }
                 }
               }
-            }
+            }-
           }
         }
       }
@@ -81,14 +81,14 @@
         }
       }
     },
-    "/api/category_summary_by_customer/{categoryName}": {
+    "/api/summary_by_customer/{categoryName}": {
       "get": {
         "tags": [
           "NorthwindCloudApp"
         ],
         "parameters": [
           {
-            "name": "categoryName",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -360,28 +360,6 @@
         }
       }
     },
-    "/api/customers_min": {
-      "get": {
-        "tags": [
-          "NorthwindCloudApp"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CustomerMinimal"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/orders_by_employee/{employeeId}": {
       "get": {
         "tags": [
@@ -601,18 +579,18 @@
         }
       }
     },
-    "/api/invoices/customer/{customerId}": {
+    "/api/invoices/customer/{id}": {
       "get": {
         "tags": [
           "NorthwindCloudApp"
         ],
         "parameters": [
           {
-            "name": "customerId",
+            "name": "id",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
@@ -1258,7 +1236,7 @@
             "in": "query",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
@@ -1808,19 +1786,15 @@
       "Customer_and_Suppliers_by_City": {
         "type": "object",
         "properties": {
-          "city": {
+          "cityName": {
+            "type": "string",
+            "nullable": false
+          },
+          "company": {
             "type": "string",
             "nullable": true
           },
-          "companyName": {
-            "type": "string",
-            "nullable": true
-          },
-          "contactName": {
-            "type": "string",
-            "nullable": true
-          },
-          "relationship": {
+          "contact": {
             "type": "string",
             "nullable": true
           }
