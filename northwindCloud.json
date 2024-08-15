@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/alphabetical_products": {
+    "/api/alphabetical_list_of_products": {
       "get": {
         "tags": [
           "NorthwindCloudApp"
@@ -22,12 +22,12 @@
                   }
                 }
               }
-            }-
+            }
           }
         }
       }
     },
-    "/api/most_popular_product_by_category/{categoryName}": {
+    "/api/category_most_popular_product/{categoryName}": {
       "get": {
         "tags": [
           "NorthwindCloudApp"
@@ -59,7 +59,7 @@
         }
       }
     },
-    "/api/most_popular_product": {
+    "/api/category_most_popular_product": {
       "get": {
         "tags": [
           "NorthwindCloudApp"
@@ -81,14 +81,14 @@
         }
       }
     },
-    "/api/summary_by_customer/{categoryName}": {
+    "/api/category_summary_by_customer/{categoryName}": {
       "get": {
         "tags": [
           "NorthwindCloudApp"
         ],
         "parameters": [
           {
-            "name": "name",
+            "name": "categoryName",
             "in": "path",
             "required": true,
             "schema": {
@@ -360,6 +360,28 @@
         }
       }
     },
+    "/api/customers_min": {
+      "get": {
+        "tags": [
+          "NorthwindCloudApp"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerMinimal"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/orders_by_employee/{employeeId}": {
       "get": {
         "tags": [
@@ -579,18 +601,18 @@
         }
       }
     },
-    "/api/invoices/customer/{id}": {
+    "/api/invoices/customer/{customerId}": {
       "get": {
         "tags": [
           "NorthwindCloudApp"
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "customerId",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "number"
+              "type": "string"
             }
           }
         ],
@@ -833,7 +855,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Products_by_Category"
+                    "$ref": "#/components/schemas/Product"
                   }
                 }
               }
@@ -1236,7 +1258,7 @@
             "in": "query",
             "required": true,
             "schema": {
-              "type": "number"
+              "type": "string"
             }
           }
         ],
@@ -1786,15 +1808,19 @@
       "Customer_and_Suppliers_by_City": {
         "type": "object",
         "properties": {
-          "cityName": {
-            "type": "string",
-            "nullable": false
-          },
-          "company": {
+          "city": {
             "type": "string",
             "nullable": true
           },
-          "contact": {
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "contactName": {
+            "type": "string",
+            "nullable": true
+          },
+          "relationship": {
             "type": "string",
             "nullable": true
           }
@@ -2633,32 +2659,6 @@
             "type": "number",
             "format": "double",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Products_by_Category": {
-        "type": "object",
-        "properties": {
-          "categoryName": {
-            "type": "string",
-            "nullable": true
-          },
-          "productName": {
-            "type": "string",
-            "nullable": true
-          },
-          "quantityPerUnit": {
-            "type": "string",
-            "nullable": true
-          },
-          "unitsInStock": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "discontinued": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false
