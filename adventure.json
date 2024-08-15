@@ -28,17 +28,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AddressDTO"
+                  "$ref": "#/components/schemas/BusinessEntityAddressDTO"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AddressDTO"
+                  "$ref": "#/components/schemas/BusinessEntityAddressDTO"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AddressDTO"
+                  "$ref": "#/components/schemas/BusinessEntityAddressDTO"
                 }
               }
             }
@@ -82,7 +82,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AddressDTO"
+                    "$ref": "#/components/schemas/BusinessEntityAddressDTO"
                   }
                 }
               },
@@ -90,7 +90,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AddressDTO"
+                    "$ref": "#/components/schemas/BusinessEntityAddressDTO"
                   }
                 }
               },
@@ -98,7 +98,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AddressDTO"
+                    "$ref": "#/components/schemas/BusinessEntityAddressDTO"
                   }
                 }
               }
@@ -7741,17 +7741,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AddressDTO"
+                  "$ref": "#/components/schemas/BusinessEntityAddressDTO"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AddressDTO"
+                  "$ref": "#/components/schemas/BusinessEntityAddressDTO"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AddressDTO"
+                  "$ref": "#/components/schemas/BusinessEntityAddressDTO"
                 }
               }
             }
@@ -7781,17 +7781,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AddressDTO"
+                  "$ref": "#/components/schemas/BusinessEntityAddressDTO"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AddressDTO"
+                  "$ref": "#/components/schemas/BusinessEntityAddressDTO"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AddressDTO"
+                  "$ref": "#/components/schemas/BusinessEntityAddressDTO"
                 }
               }
             }
@@ -10021,7 +10021,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AddressDTO"
+                    "$ref": "#/components/schemas/BusinessEntityAddressDTO"
                   }
                 }
               },
@@ -10029,7 +10029,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AddressDTO"
+                    "$ref": "#/components/schemas/BusinessEntityAddressDTO"
                   }
                 }
               },
@@ -10037,7 +10037,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AddressDTO"
+                    "$ref": "#/components/schemas/BusinessEntityAddressDTO"
                   }
                 }
               }
@@ -11721,52 +11721,6 @@
   },
   "components": {
     "schemas": {
-      "AddressDTO": {
-        "type": "object",
-        "properties": {
-          "addressId": {
-            "type": "integer",
-            "description": "Primary key for Address records.",
-            "format": "int32"
-          },
-          "addressLine1": {
-            "type": "string",
-            "description": "First street address line.",
-            "nullable": true
-          },
-          "addressLine2": {
-            "type": "string",
-            "description": "Second street address line.",
-            "nullable": true
-          },
-          "city": {
-            "type": "string",
-            "description": "Name of the city.",
-            "nullable": true
-          },
-          "state": {
-            "type": "string",
-            "description": "State or province details from StateProvince table.",
-            "nullable": true
-          },
-          "country": {
-            "type": "string",
-            "nullable": true
-          },
-          "postalCode": {
-            "type": "string",
-            "description": "Postal code for the street address.",
-            "nullable": true
-          },
-          "modifiedDate": {
-            "type": "string",
-            "description": "Date and time the record was last updated.",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Street address information for customers, employees, and vendors."
-      },
       "BusinessEntityAddressDTO": {
         "type": "object",
         "properties": {
@@ -14291,10 +14245,10 @@
             "$ref": "#/components/schemas/SalesTerritoryDTO"
           },
           "billToAddress": {
-            "$ref": "#/components/schemas/AddressDTO"
+            "$ref": "#/components/schemas/BusinessEntityAddressDTO"
           },
           "shipToAddress": {
-            "$ref": "#/components/schemas/AddressDTO"
+            "$ref": "#/components/schemas/BusinessEntityAddressDTO"
           },
           "shipMethod": {
             "$ref": "#/components/schemas/ShipMethodDTO"
