@@ -46,7 +46,7 @@
         }
       }
     },
-    "/adventureworks/api/v1/addresses": {
+    "/adventureworks/api/v1/new_addresses": {
       "get": {
         "tags": [
           "Addresses"
